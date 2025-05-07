@@ -63,3 +63,8 @@ class ArbolBinario:
         def _preorden(nodo):
             return [nodo.valor] + _preorden(nodo.izquierda) + _preorden(nodo.derecha) if nodo else []
         return _preorden(self.raiz)
+
+    def postorden(self):
+        def _postorden(nodo):
+            return _postorden(nodo.izquierda) + _postorden(nodo.derecha) + [nodo.valor] if nodo else []
+        return _postorden(self.raiz)
